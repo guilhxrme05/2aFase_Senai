@@ -1,0 +1,15 @@
+.titulo{
+  color: rgb(0, 0, 0);
+  background-color: rgba(0, 255, 255, 0.562);
+  font-weight: 800;
+  font-family: arial;
+}
+
+.paragrafo{
+  background-color: rgba(255, 196, 0, 0.452);
+  font-family: Helvetica;
+  font-weight: 800;
+  
+  
+}
+
