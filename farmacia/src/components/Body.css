@@ -1,0 +1,16 @@
+:root{
+    --cor-1: #e23e57;
+    --cor-2: #ffffff;
+    --cor-3: #e96a7e;
+    --cor-4: #ce1f3a;
+    --cor-5: #e6e6e6;
+    --cor-6: #ef97a4;
+  
+  }
+
+.body-container{
+    background-color: var(--cor-1);
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+}
