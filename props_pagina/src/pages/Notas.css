@@ -1,0 +1,30 @@
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.inptNotas{
+    width: 90px;
+    text-align: center;
+    
+}
+
+.buttonMedia{
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.lbl-media{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: x-large;
+}
+
+label{
+    margin-bottom: -10px;
+}
