@@ -7,6 +7,7 @@ import Porco from './pages/Porco'
 import Sorteio from './pages/Sorteio'
 import Numero from './pages/Numero'
 import Democracia from './pages/Democracia'
+import Revisao from './pages/Revisao'
 
 
 
@@ -24,7 +25,8 @@ function App() {
     {/*<Porco />*/}
     {/*<Notas />*/}
     {/*<Numero />*/}
-    <Democracia />
+    {/*<Democracia />*/}
+    <Revisao />
     
     
     
