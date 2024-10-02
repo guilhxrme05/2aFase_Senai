@@ -4,11 +4,12 @@ import './App.css'
 function App() {
 
   const [fila, setFila] = useState([])
+  const [filaPreferencial, setFilaPreferencial] = useState([])
 
   function gerarSenha(){
 
     let senha = {
-      numero: Date.now(),
+      numero: Math.floor(Math.random() * 9000) + 1000,
       tipo: "normal"
     }
 
@@ -16,19 +17,61 @@ function App() {
 
   
   }
+
+  function gerarPreferencial(){
+
+    let senhaPreferencial = {
+         numero: Math.floor(Math.random() * 9000) + 1000,
+         tipo: "preferencial"
+
+    }
+
+    setFilaPreferencial([...filaPreferencial, senhaPreferencial])
+  }
   
-  function atender(){
-    if(fila.length){
-      alert(fila[0].numero)
-      //let filaTemp = fila
-      //fila.splice(0, 1)
-      setFila(fila.slice(1))
-}
-
-else{
-  alert("Ninguem na fila.")
-}
-
+  function atender() {
+    if (fila.length && filaPreferencial.length === 0) {
+      let menorIndex = 0;
+  
+      for (let i = 1; i < fila.length; i++) {
+        if (fila[i].numero < fila[menorIndex].numero) {
+          menorIndex = i;
+        }
+      }
+  
+      alert(fila[menorIndex].numero);
+      fila.splice(menorIndex, 1);
+      setFila([...fila]);
+  
+    } else if (fila.length && filaPreferencial.length) {
+      let menorIndex = 0;
+  
+      for (let i = 1; i < filaPreferencial.length; i++) {
+        if (filaPreferencial[i].numero < filaPreferencial[menorIndex].numero) {
+          menorIndex = i;
+        }
+      }
+  
+      alert(filaPreferencial[menorIndex].numero);
+      filaPreferencial.splice(menorIndex, 1); 
+      setFilaPreferencial([...filaPreferencial]);
+  
+    } else if (fila.length === 0 && filaPreferencial.length) {
+      let menorIndex = 0;
+  
+      for (let i = 1; i < filaPreferencial.length; i++) {
+        if (filaPreferencial[i].numero < filaPreferencial[menorIndex].numero) {
+          menorIndex = i;
+        }
+      }
+  
+      alert(filaPreferencial[menorIndex].numero);
+      filaPreferencial.splice(menorIndex, 1); 
+      setFilaPreferencial([...filaPreferencial]); 
+  
+    } else if (fila.length === 0 && filaPreferencial.length === 0) {
+      alert("Ninguem na fila.");
+    }
   }
 
 
@@ -37,7 +80,7 @@ else{
     <>
       <button onClick={atender}>Atender</button>
       <button onClick={gerarSenha}>Senha Normal</button>
-      <button>Senha Preferencial</button>
+      <button onClick={gerarPreferencial}>Senha Preferencial</button>
       {fila.map((senha) => (
 
       <div key={senha.numero}>
@@ -46,14 +89,30 @@ else{
 
 
       </div>
-
-
-
       )
+
+      
       
       
       
       )}
+
+{filaPreferencial.map((senhaPreferencial) => (
+
+<div key={senhaPreferencial.numero}>
+ <p>{senhaPreferencial.numero}</p>
+ <p>{senhaPreferencial.tipo}</p>
+
+
+</div>
+)
+
+
+
+
+
+)}
+      
     </>
   )
 }
