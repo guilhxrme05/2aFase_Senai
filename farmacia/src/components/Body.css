@@ -1,10 +1,10 @@
 :root {
-  --cor-1: #e23e57; 
-  --cor-2: #ffffff; 
-  --cor-3: #e96a7e; 
-  --cor-4: #ce1f3a; 
-  --cor-5: #e6e6e6; 
-  --cor-6: #ef97a4; 
+  --cor-1: #e23e57;
+  --cor-2: #ffffff;
+  --cor-3: #e96a7e;
+  --cor-4: #ce1f3a;
+  --cor-5: #e6e6e6;
+  --cor-6: #ef97a4;
 }
 
 body, html {
@@ -12,7 +12,7 @@ body, html {
   padding: 0;
   height: 100%;
   font-family: 'Arial', sans-serif;
-  background-color: var(--cor-1); 
+  background-color: var(--cor-1);
 }
 
 .body-container {
@@ -21,63 +21,106 @@ body, html {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  min-height: 100vh; 
-  padding: 40px;
+  min-height: 100vh;
+  padding: 40px 20px;
   box-sizing: border-box;
-  overflow-y: auto; 
+  text-align: center;
+}
+
+.main-title {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.subtitle, .invitation {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.image-container {
+  width: 100%;
+  max-width: 100px;
+  margin-bottom: 30px;
+}
+
+.farmacia-image {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.details {
+  background-color: var(--cor-2);
+  color: var(--cor-1);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 600px;
+}
+
+.details h2 {
+  margin-top: 0;
+}
+
+.details ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.details ul li {
+  margin: 5px 0;
+}
+
+.fila-container {
+  background-color: var(--cor-2);
+  color: var(--cor-1);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  margin-top: 30px;
+  width: 100%;
 }
 
 .button-container {
-  display: flex; 
+  display: flex;
+  gap: 15px;
   justify-content: center;
-  margin-bottom: 30px; 
-  margin-left: 50px;
+  margin-bottom: 20px;
+}
 
+.senhas-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.div-senha {
+  background-color: var(--cor-5);
+  padding: 10px;
+  border-radius: 5px;
+  color: var(--cor-1);
+  width: 45%;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 button {
   background-color: var(--cor-3);
   color: var(--cor-2);
   border: none;
-  padding: 12px 20px; 
+  padding: 12px 20px;
   border-radius: 5px;
-  margin: 10px; 
   cursor: pointer;
-  font-size: 1em; 
-  transition: background-color 0.3s, transform 0.2s; 
+  font-size: 1em;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover {
   background-color: var(--cor-4);
-  transform: scale(1.05); 
+  transform: scale(1.05);
 }
-
-.senhas-container {
-  display: flex; 
-  justify-content: space-around; 
-  width: 100%; 
-  max-width: 800px; 
-}
-
-.senhas-container h2{
-  margin-left: 15px;
-}
-
-.div-senha {
-  background-color: var(--cor-2);
-  padding: 15px;
-  border-radius: 5px;
-  color: var(--cor-4);
-  margin: 10px 0; 
-  width: 100%; 
-  text-align: center; 
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-  
-}
-
-p {
-  margin: 5px 0;
- 
-  
-}
-

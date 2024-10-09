@@ -7,7 +7,6 @@ function App() {
   const [fila, setFila] = useState([]);
   const [filaPreferencial, setFilaPreferencial] = useState([]);
 
-  // Função para gerar senha normal
   const gerarSenha = () => {
     let senha = {
       numero: Math.floor(Math.random() * 9000) + 1000,
@@ -16,7 +15,6 @@ function App() {
     setFila([...fila, senha]);
   };
 
-  // Função para gerar senha preferencial
   const gerarPreferencial = () => {
     let senhaPreferencial = {
       numero: Math.floor(Math.random() * 9000) + 1000,
@@ -25,28 +23,13 @@ function App() {
     setFilaPreferencial([...filaPreferencial, senhaPreferencial]);
   };
 
-  // Função para atender as senhas na fila
   const atender = () => {
     if (filaPreferencial.length > 0) {
-      let menorIndex = 0;
-      for (let i = 1; i < filaPreferencial.length; i++) {
-        if (filaPreferencial[i].numero < filaPreferencial[menorIndex].numero) {
-          menorIndex = i;
-        }
-      }
-      alert(`Atendendo preferencial: ${filaPreferencial[menorIndex].numero}`);
-      filaPreferencial.splice(menorIndex, 1);
-      setFilaPreferencial([...filaPreferencial]);
+      alert(`Atendendo preferencial: ${filaPreferencial[0].numero}`);
+      setFilaPreferencial(filaPreferencial.slice(1));
     } else if (fila.length > 0) {
-      let menorIndex = 0;
-      for (let i = 1; i < fila.length; i++) {
-        if (fila[i].numero < fila[menorIndex].numero) {
-          menorIndex = i;
-        }
-      }
-      alert(`Atendendo normal: ${fila[menorIndex].numero}`);
-      fila.splice(menorIndex, 1);
-      setFila([...fila]);
+      alert(`Atendendo normal: ${fila[0].numero}`);
+      setFila(fila.slice(1));
     } else {
       alert('Ninguém na fila.');
     }
