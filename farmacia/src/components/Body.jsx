@@ -1,5 +1,7 @@
+// Body.js
 import React from 'react';
 import './Body.css';
+import Beneficios from './Beneficios';
 
 const Body = ({ fila, filaPreferencial, gerarSenha, gerarPreferencial, atender }) => {
   return (
@@ -28,6 +30,8 @@ const Body = ({ fila, filaPreferencial, gerarSenha, gerarPreferencial, atender }
           <li>Sorteio de brindes exclusivos</li>
         </ul>
       </div>
+
+      <Beneficios />
 
       <div className="fila-container">
         <h2>Gerador de Senha e Fila de Atendimento</h2>
